@@ -4,15 +4,15 @@
     {
         static void Main(string[] args)
         {
-            // Subsystems
+            
             Television tv = new Television();
             AudioSystem audio = new AudioSystem();
             MediaPlayer player = new MediaPlayer();
 
-            // Facade
+            
             HomeTheaterFacade homeTheater = new HomeTheaterFacade(tv, audio, player);
 
-            // Client interacts with the facade
+            
             homeTheater.WatchMovie();
             Console.WriteLine();
             homeTheater.EndMovie();
@@ -20,28 +20,28 @@
             Console.ReadLine();
         }
     }
-    // Subsystem 1
+    
     class Television
     {
         public void TurnOn() => Console.WriteLine("Television: Turning on...");
         public void TurnOff() => Console.WriteLine("Television: Turning off...");
     }
 
-    // Subsystem 2
+    
     class AudioSystem
     {
         public void TurnOn() => Console.WriteLine("AudioSystem: Turning on...");
         public void TurnOff() => Console.WriteLine("AudioSystem: Turning off...");
     }
 
-    // Subsystem 3
+    
     class MediaPlayer
     {
         public void Play() => Console.WriteLine("MediaPlayer: Playing media...");
         public void Stop() => Console.WriteLine("MediaPlayer: Stopping media...");
     }
 
-    // Facade
+    
     class HomeTheaterFacade
     {
         private readonly Television _television;
